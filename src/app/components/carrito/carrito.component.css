@@ -1,0 +1,106 @@
+/* ===== CONTENEDOR ===== */
+
+section {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  max-width: 700px;
+}
+
+/* ===== TITULO ===== */
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #111827;
+}
+
+/* ===== LISTA ===== */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== ITEM DEL CARRITO ===== */
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f9fafb;
+  margin-bottom: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+/* ===== BOTON QUITAR ===== */
+
+li button {
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+li button:hover {
+  background: #dc2626;
+}
+
+/* ===== TOTAL ===== */
+
+p {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ===== BOTONES ===== */
+
+button {
+  margin-top: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* vaciar carrito */
+
+button:nth-of-type(1) {
+  background: #6b7280;
+  color: white;
+}
+
+button:nth-of-type(1):hover {
+  background: #4b5563;
+}
+
+/* exportar XML */
+
+button:nth-of-type(2) {
+  background: #7c3aed;
+  color: white;
+}
+
+button:nth-of-type(2):hover {
+  background: #6d28d9;
+}
+
+/* ===== CARRITO VACIO ===== */
+
+section p:first-of-type {
+  color: #6b7280;
+}

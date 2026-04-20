@@ -1,30 +1,28 @@
-/* CONTENEDOR DE LA CARD */
-.card{
-     width: 300px; 
+.card {
+    width: 300px;
     min-height: 420px;
     border: 1px solid #e5e7eb;
     border-radius: 14px;
     overflow: hidden;
     background: #ffffff;
     transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-/* EFECTO HOVER */
-.card:hover{
+.card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
-/* IMAGEN */
-.img{
+.img {
     width: 100%;
     height: 250px;
     object-fit: contain;
     display: block;
 }
 
-/* CUERPO */
-.body{
+.body {
     font-family: system-ui, BlinkMacSystemFont;
     padding: 14px;
     display: flex;
@@ -33,77 +31,68 @@
     flex: 1;
 }
 
-/* TITULO + PRECIO */
-.top{
+.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.title{
+.title {
     margin: 0;
     font-size: 16px;
     font-weight: 600;
     color: #111827;
 }
 
-.price{
+.price {
     font-weight: 700;
     color: #2563eb;
     font-size: 15px;
 }
 
-/* META */
-.meta{
+.meta {
     margin: 0;
     color: #6b7280;
     font-size: 13px;
 }
 
-/* DESCRIPCION */
-.desc{
+.desc {
     margin: 4px 0;
     font-size: 14px;
     color: #4b5563;
     line-height: 1.4;
 }
 
-/* STOCK */
-.stock{
-    margin-top: auto;
+.stock {
     font-size: 13px;
     font-weight: 600;
     color: #059669;
 }
 
-.stock.out{
+.stock.out {
     color: #dc2626;
 }
 
-/* HEADER */
-.header{
-    margin-bottom: 18px;
+.btn {
+    margin-top: auto;
+    padding: 10px 0;
+    width: 100%;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease;
 }
 
-.h1{
-    margin: 0 0 6px;
-    font-size: 26px;
-    font-weight: 700;
+.btn:hover:not(:disabled) {
+    background: #1d4ed8;
 }
 
-.p{
-    margin: 0;
-    color: #6b7280;
-    font-size: 15px;
+.btn:disabled {
+    background: #d1d5db;
+    color: #9ca3af;
+    cursor: not-allowed;
 }
-
-/* GRID */
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 260px);
-    gap: 30px;
-    /*max-width: 1200px;
-    margin: 0 auto;*/
-    justify-content: center;
-}
-

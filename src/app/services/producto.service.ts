@@ -1,21 +1,15 @@
-import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
-import { Product } from '../models/producto.model';
+//producto.service.ts
+import { Injectable } from '@angular/core';
 
+import { Product } from '../models/producto.model';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
+export class ProductoService {
 
-  private http = inject(HttpClient);
-  private appUrl = 'http://localhost:3000/api/productos';
-
-  getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.appUrl);
-  }
-
-  /*constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Product[]> {
     return this.http
@@ -33,7 +27,7 @@ export class ProductService {
       id: Number(this.getText(node, 'id')),
       name: this.getText(node, 'name'),
       price: Number(this.getText(node, 'price')),
-      imageUrl: this.getText(node, 'imageUrl'),
+      imagenUrl: this.getText(node, 'imageUrl'),
       category: this.getText(node, 'category'),
       description: this.getText(node, 'description'),
       inStock: Number(this.getText(node, 'inStock')) > 0
@@ -42,5 +36,42 @@ export class ProductService {
 
   private getText(parent: Element, tag: string): string {
     return parent.getElementsByTagName(tag)[0]?.textContent ?? '';
+  }
+
+  /*
+  private readonly products: Product[] = [
+    {
+      id: 1,
+      name: 'Lapiz big',
+      price: 5,
+      imagenUrl: 'https://www.tuksonora.com/cdn/shop/products/Lapiz_Evolution_large.jpg?v=1719093213',
+      category: 'Lapices',
+      description: 'Lapis #2 marca big ',
+      inStock: true,
+    },
+    {
+      id: 2,
+      name: 'Pluma azul big',
+      price: 8,
+      imagenUrl: 'https://www.cyberpuerta.mx/img/product/M/CP-BIC-7501014511016-1.jpg',
+      category: 'Plumas',
+      description: 'Pluma azul para rallar',
+      inStock: true,
+    },
+    {
+      id: 3,
+      name: 'Cuaderno Norma raya',
+      price: 30,
+      imagenUrl: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSBycpZTZ-iNw196RS_QN6IFKeCvrs94FulzJwvdET4gmCZciWpJkd_Yje8mcUn687IjD_i2lqE7XkLaKBfCd8dvgZwBApQitbjWKrJCkqq6iTqYyOkpbCcpDkqfSHBgv0GcTk-aQ&usqp=CAc',
+      category: 'Cuadernos',
+      description: 'Cuaderno Norma para escribir en el we',
+      inStock: false,
+    },
+  ];*/
+
+  /*getAll(): Product[] {
+    return this.products;
   }*/
+
+
 }

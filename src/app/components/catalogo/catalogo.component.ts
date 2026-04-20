@@ -1,21 +1,39 @@
-import { Component } from "@angular/core";
-//import { ProductCardComponent } from "../producto-card/producto-card.component";
+//catalogo.component.ts
+import { Component, computed } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ProductCardComponent } from "../producto/producto.component";
-import { ProductService } from "../../services/producto.service";
+import {ProductoService} from "../../services/producto.service";
 import { Product } from "../../models/producto.model";
+import { CarritoService } from '../../services/carrito.service';
+import { CarritoComponent } from '../carrito/carrito.component';
 
-@Component({
+@Component ({
     selector: 'app-catalogo',
     standalone: true,
-    imports: [ProductCardComponent],
+    imports: [ProductCardComponent, CarritoComponent],
     templateUrl: './catalogo.component.html',
     styleUrls: ['./catalogo.component.css'],
+    
+
 })
 export class CatalogoComponent{
-    products: Product[] = []; //arreglo de productos
-    constructor(private productService: ProductService) {
-    this.productService.getAll().subscribe(data => {
-      this.products = data;
-    });
-  }
+  
+    
+
+  products: Product[] = []; //arreglo de productos
+   constructor(
+  private productService: ProductoService,
+  private carritoService: CarritoService
+) {
+  this.productService.getAll().subscribe(data => {
+    this.products = data;
+  });
+}
+agregar(producto: Product){
+  this.carritoService.agregar(producto);
+}
+    /*products: Product []= [];
+    constructor (private productService: ProductoService){
+        this.products=this.productService.getAll();
+    }*/
 }

@@ -1,8 +1,8 @@
-export interface Product {
-    id: number; //declarar variables
+export interface Product{
+    id: number;
     name: string;
     price: number;
-    imageUrl: string;
+    imagenUrl: string;
     category: string;
     description: string;
     inStock: boolean;
