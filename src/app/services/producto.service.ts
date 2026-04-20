@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Product } from '../models/producto.model';
@@ -8,7 +8,14 @@ import { Product } from '../models/producto.model';
 })
 export class ProductService {
 
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
+  private appUrl = 'http://localhost:3000/api/productos';
+
+  getAll(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.appUrl);
+  }
+
+  /*constructor(private http: HttpClient) {}
 
   getAll(): Observable<Product[]> {
     return this.http
@@ -35,5 +42,5 @@ export class ProductService {
 
   private getText(parent: Element, tag: string): string {
     return parent.getElementsByTagName(tag)[0]?.textContent ?? '';
-  }
+  }*/
 }
