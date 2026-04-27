@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: system-ui, sans-serif;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+
+h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+a {
+  color: #2d6a4f;
+}
+
+p {
+  color: #444;
+  line-height: 1.5;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 12px 0;
+}
+
+div[style] {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  border-color: #e5e7eb !important;
+}

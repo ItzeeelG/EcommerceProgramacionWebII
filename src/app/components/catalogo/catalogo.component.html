@@ -3,11 +3,8 @@
 </header>
 
 <section class="grid">
-  @for (p of products; track p.id) {
-    <app-product-card
-      [product]="p"
-      (add)="agregar($event)">
-    </app-product-card>
+  @for (producto of products(); track producto.id) {
+    <app-product-card [product]="producto" (add)="agregar($event)" />
   }
 </section>
 
